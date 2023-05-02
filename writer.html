@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Our Writer</title>
+    <script src="assets/data.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        background-color: rgb(0, 0, 0);
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        float: left;
+      }
+
+      h1 {
+        font-size: 65pt;
+        background-color: transparent;
+        color: rgb(255, 255, 255);
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 45px;
+        margin-bottom: 10px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 18%;
+        padding-right: 30%;
+        border: 8pt solid rgb(229, 82, 2);
+      }
+
+      .eachWriter img {
+        width: 15%;
+        padding: 10px;
+        border: 2px solid rgb(229, 82, 2);
+        float: left;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        border-radius: 105pt;
+      }
+
+      .eachWriter h2 {
+        font-size: 25pt;
+        margin-top: 5%;
+      }
+
+      .eachWriter h5 {
+        font-weight: lighter;
+        max-width: 30%;
+        line-height: 20px;
+        margin-right: 40%;
+        margin-top: 10px;
+      }
+.eachWriter{
+  margin-left: 18%;
+}
+      nav {
+    width: 100vw;
+    height: 50px;
+   }
+    div.menubar{
+      position: fixed;
+      width: 100vw;
+      
+    }
+
+    nav .menubar .menu {
+      position: relative;
+      width: 182pt;
+      height: 15px;
+      padding: 25px;
+      font-weight: bold;
+      float: left;
+      color: rgb(255, 255, 255);       
+      cursor: pointer;
+      background-color: black;
+      transition: background-color 0.5s;
+      font-family: Arial, Helvetica, sans-serif; 
+      text-align: center;
+      margin-bottom: 5pt;
+    }
+  
+   
+    nav .menubar .menu:hover {
+      background-color: rgb(0, 0, 0);
+      color: rgb(229, 82, 2);
+      height: 15px;
+      font-weight: bolder;
+    }
+
+    div.judulwriter{
+      width: 100%;
+      background-color: rgb(229, 82, 2) ;
+      height: 155pt;
+    }
+
+    </style>
+  </head>
+
+  <body>
+
+    <nav>
+      <div class="menubar">
+             <div class="kotakan">
+             <div class="menu" onclick="location.href='index.html'" >HOME</div>
+             <div class="menu" onclick="location.href='writer.html'"style="color: rgb(229, 82, 2);">WRITER</div>
+             <div class="menu" onclick="location.href='editor.html'">EDITOR'S PICKS</div>
+             <div class="menu" onclick="location.href='about us.html'">OUR VISION</div>
+           </div>
+           </div>
+         </nav>
+<div class="judulwriter">
+    <h1>Our Writer</h1></div>
+    <div id="writerResults"></div>
+  </body>
+</html>
+
+<script>
+  var qs = window.location.search;
+  var ur = new URLSearchParams(qs);
+  var id = ur.get('id');
+
+  // ini preventif bila get url tidak diisi selalu buat skudicari = 1 (supaya page tidak blank)
+  if (!id) {
+    id = 1;
+  }
+    var writernya = '';
+    for (var r=0; r < writers.Penulis.length; r++) {
+      writernya = writernya + '<div class="eachWriter"><img src="assets/img/' + writers.Penulis[r].foto 
+        + '" /><h2><a href="isi writer.html?id=' + writers.Penulis[r].id + '">' + writers.Penulis[r].nama +
+          '</a></h2><h5>' + writers.Penulis[r].info + '</h5></div>' ;
+    }
+    document.getElementById('writerResults').innerHTML = writernya;
+
+
+  </script>
+

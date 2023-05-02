@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="assets/data.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        float: left;
+
+      }
+
+      .judulheadline {
+        width: 100%;
+        position:relative;
+        background-color:rgb(229, 82, 2); 
+        margin-top: 15pt;
+        
+      }
+
+
+      h1 {
+        color:white;
+        margin-left: 17%;
+        margin-right: 15%;
+        margin-top: 10pt;
+        font-size: 30px;
+        font-style: bolder;
+        background-color: transparent;
+      }
+
+      h2 {
+        font-size: 20px;
+        color:white;
+        margin-left: 17%;
+        margin-right: 20%;
+        margin-top: 10pt;
+        font-weight: lighter;
+        background-color: transparent;
+    }
+
+      h3 {
+        font-size: 18px;
+        color: rgb(255, 255, 255);
+        margin-left: 17%;
+        margin-top: 10pt;
+        font-weight: bold;
+        background-color: transparent;
+    }
+    
+        h4 {
+        font-size: 16px;
+        color: white;
+        margin-left: 30%;
+        margin-right: 5%;
+        line-height: 1.5;
+        font-weight: lighter;
+        background-color: transparent;
+    }
+
+    h5 {
+        font-size: 13px;
+        color: rgb(255, 255, 255);
+        margin-top: 13pt;
+        font-style: italic;
+        background-color: transparent;
+        margin-bottom: 10pt;
+        margin-left: 10pt;
+       
+    }
+
+      .imgs {
+        width: 55%;
+        float: left;
+        position:relative;
+        background-color: black;
+      }
+
+      .isiberita {
+        width: 80%;
+        margin-top: 3%;
+        position:relative;
+        margin-bottom: 35pt;
+      }
+
+      div.foto {
+        width: 100%;
+      }
+
+div.judulann{
+  background-color: transparent;
+  width: 10%;
+ 
+}
+div.gambarnya {
+  width: 55%;
+}
+
+div.logo {
+  width: 100%;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <div class="logo">
+    <img src="assets/img/logo.png" style="width: 22%"onclick="location.href='index.html'"></div>
+   
+  <div class="gambarnya">
+  <ul id="imgresults"></div></div></div>
+
+    <div class="judulann">
+      <h1 style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 65pt;font-weight: lighter;text-align: left ;top: 30pt ;left: 40%;background-color: transparent;position:relative">RECENTLY<br> ON<br>THE <br>DAILY</h1>
+    </div>
+
+    <div class="judulheadline"></div>
+      <div class="foto">
+      
+        <div id="Titleresults"></div>
+        <div id="Newsresults"></div>
+
+    </body>
+
+
+    <script>
+
+var qs = window.location.search;
+  var ur = new URLSearchParams(qs);
+  var id = ur.get('id');
+
+  // ini preventif bila get url tidak diisi selalu buat id = 1 (supaya page tidak blank)
+  if (!id) {
+    id = 1;
+  }
+
+      var img = '';
+        img = img + '<div class="imgs"><img src="assets/img/'  + categories.Products[id].foto + '" /><h5>' + categories.Products[id].teksfoto + '</h5></div>';
+      document.getElementById('imgresults').innerHTML = img;
+    </script>
+
+   <script>
+    var title = '';
+    title = title + '<div class="judulheadline">' +'<h1>'+ categories.Products[id].headline + '</h1><h2>' + categories.Products[id].subheadline + '</h2><h3>' + categories.Products[id].author + '</h3><h5>' + categories.Products[id].tanggal + '</h5></div>';
+    document.getElementById('Titleresults').innerHTML = title; 
+    </script>
+
+
+
+<script>
+  var berita = '';
+    berita = berita + '<div class="isiberita">' + '<h4>'+ categories.Products[id].berita + '</h4></div>'
+  document.getElementById('Newsresults').innerHTML = berita;
+</script>
+
+

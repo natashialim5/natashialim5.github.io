@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="assets/data.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        float: left;
+
+      }
+
+      .judulheadline {
+        width: 100%;
+        position:relative;
+      }
+
+      h1 {
+        color:white;
+        margin-left: 17%;
+        margin-right: 15%;
+        margin-top: 10pt;
+        font-size: 30px;
+        font-style: bolder;
+        background-color: transparent;
+      }
+
+      h2 {
+        font-size: 20px;
+        color:white;
+        margin-left: 17%;
+        margin-right: 15%;
+        margin-top: 10pt;
+        font-weight: lighter;
+        background-color: transparent;
+    }
+
+      h3 {
+        font-size: 18px;
+        color: rgb(229, 82, 2);
+        margin-left: 17%;
+        margin-right: 15%;
+        margin-top: 10pt;
+        font-weight: bold;
+        background-color: transparent;
+    }
+    
+        h4 {
+        font-size: 16px;
+        color: white;
+        margin-left: 30%;
+        margin-right: 5%;
+        line-height: 1.5;
+        font-weight: lighter;
+        background-color: transparent;
+    }
+
+    h5 {
+        font-size: 13px;
+        color: rgb(229, 82, 2);
+        margin-top: 15pt;
+        font-style: italic;
+        background-color: transparent;
+    }
+
+      div.imgs {
+        width: 82%;
+        height: fit-content;
+        margin-top: 3%;
+        margin-left: 18%;
+        position:relative;
+      }
+      
+      .isiberita {
+        width: 80%;
+        margin-top: 3%;
+        position:relative;
+        margin-bottom:35pt;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="judulheadline">
+      <img src="assets/img/logo.png" style="width: 22%" onclick="location.href='index.html'">
+        <div id="Titleresults"></div>
+        <div id="imgresults"></div>
+        <div id="Newsresults"></div>
+
+    </body>
+
+    <script>
+
+var qs = window.location.search;
+  var ur = new URLSearchParams(qs);
+  var id = ur.get('id');
+
+  // ini preventif bila get url tidak diisi selalu buat id = 1 (supaya page tidak blank)
+  if (!id) {
+    id = 1;
+  }
+
+    var title = '';
+    title = title + '<div class="judulheadline">' +'<h1>'+ categories.Products[id].headline + '</h1><h2>' + categories.Products[id].subheadline + '</h2><h3>' + categories.Products[id].author + '</h3></div>';
+    document.getElementById('Titleresults').innerHTML = title; 
+    </script>
+
+  <script>
+    var img = '';
+      img = img + '<div class="imgs"><img src="assets/img/' + categories.Products[id].foto + '" /><h5>' + categories.Products[id].teksfoto + '</h5></div>';
+    document.getElementById('imgresults').innerHTML = img;
+  </script>
+
+<script>
+  var berita = '';
+    berita = berita + '<div class="isiberita">' + '<h4>'+ categories.Products[id].berita + '</h4></div>'
+  document.getElementById('Newsresults').innerHTML = berita;
+</script>
+
+

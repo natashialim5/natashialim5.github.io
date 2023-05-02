@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Daily's Vision</title>
+    <script src="assets/data.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        background-color:  rgb(229, 82, 2);
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        float: left;
+      }
+      nav {
+    width: 100vw;
+    height: 20px;
+   }
+    div.menubar{
+      position: fixed;
+      width: 100vw;
+      
+    }
+
+    nav .menubar .menu {
+      position: relative;
+      width: 90px;
+      height: 15px;
+      padding: 25px;
+      font-weight: bold;
+      float: left;
+      color: rgb(255, 255, 255);       
+      cursor: pointer;
+      background-color: black;
+      transition: background-color 0.5s;
+      font-family: Arial, Helvetica, sans-serif; 
+      text-align: center;
+      margin-bottom: 5pt;
+    }
+  
+   
+    nav .menubar .menu:hover {
+      background-color: rgb(0, 0, 0);
+      color: rgb(229, 82, 2);
+      height: 15px;
+      font-weight: bolder;
+    }
+      
+      .judulwriter img {
+        max-width: 20%;
+        
+     
+        float: left;
+        margin: 20px;
+      
+      }
+
+      .eachWriter h3 {
+        font-weight: lighter;
+        max-width: 60%;
+        line-height: 30px;
+        margin-top: 5%;
+        margin-left: 25%;
+        margin-bottom: 35pt;
+      }
+
+      .judulwriter{
+        width: 100vw;
+        background-color: white;
+        height: 215pt;
+      }
+      
+      .judulwriter h2 {
+     
+        color: rgb(229, 82, 2);
+        font-size: 55px;
+        font-style: bolder;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: transparent;
+        position: relative;
+        top: 70pt;
+        left: 15pt;
+        width: 60%;
+        
+      }
+      div.logo {
+  width: 100%;
+  background-color: white;
+}
+     
+
+    </style>
+  </head>
+  <body>
+
+    <div class="logo">
+      <img src="assets/img/LOGOoren.jpg" style="width: 22%"onclick="location.href='index.html'"></div>
+
+    <div id="Titleresults"></div>
+    <div id="writerResults"></div>
+  </body>
+</html>
+<script>
+  var qs = window.location.search;
+  var ur = new URLSearchParams(qs);
+  var id = ur.get('id');
+
+  // ini preventif bila get url tidak diisi selalu buat id = 1 (supaya page tidak blank)
+  if (!id) {
+    id = 0;
+  }
+
+  var title = '';
+  title = title + '<div class="judulwriter"><img src="assets/img/' + aboutus.timkita[id].foto
+      + '" />' +'<h2>'+ aboutus.timkita[id].nama + '</h2>';
+
+  document.getElementById('Titleresults').innerHTML = title;
+
+  var writernya = '';
+    writernya = writernya + '<div class="eachWriter"><h3>' + aboutus.timkita[id].bio + '</h3></div>' ;
+  
+  document.getElementById('writerResults').innerHTML = writernya;
+</script>
+
+
+

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NEWS</title>
+    <script src="assets/data.js"></script>
+    <style>
+         * {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+    }
+        nav {
+    width: 100vw;
+    height: 20px;
+   }
+    div.menubar{
+      position: fixed;
+      width: 100vw;
+      
+    }
+
+    nav .menubar .menu {
+      position: relative;
+      width: 20%;
+      height: 15px;
+      padding: 25px;
+      font-weight: bold;
+      float: left;
+      color: rgb(255, 255, 255);       
+      cursor: pointer;
+      background-color: black;
+      transition: background-color 0.5s;
+      font-family: Arial, Helvetica, sans-serif; 
+      text-align: center;
+      margin-bottom: 5pt;
+    }
+  
+   
+    nav .menubar .menu:hover {
+      background-color: rgb(0, 0, 0);
+      color: rgb(229, 82, 2);
+      height: 15px;
+      font-weight: bolder;
+    }
+    header {
+      background-image: url("assets/img/rainforest.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 400px;
+      
+    }
+
+    .category {
+        width: 140pt;
+        height: 250pt;
+        padding: 20px;
+     
+        float: left;
+        margin: 5pt;
+        margin-top: 15pt;
+      }
+
+
+    .kecilan {
+        width:200pt;
+        height:250pt;
+        padding: 5pt;
+        float: left;
+        margin-left: 20pt;
+        margin-top: 35pt;
+        
+      }
+
+      .kotaknya {
+        width: 80%;
+        padding-top: 25pt;
+        left : 15pt;
+      }
+      .category img {
+        
+        height: 100pt;
+      }
+      .kecilan img {
+      
+                height: 100pt;
+      }
+
+      .category h4 {
+        margin-top: 10px;
+        color: white;
+        font-size: 12pt;
+      }
+      
+      .kecilan h4 {
+        margin-top: 10px;
+        color: white;
+        font-size: 12pt;
+        width: 100%;
+      }
+      .category h5 {
+        font-size: 7pt;
+        margin-top: 5px;
+        color:darkgray;
+      }
+      .kecilan h5 {
+        font-size: 7pt;
+        margin-top: 5px;
+        color:darkgray;
+      }
+      .category h6 {
+        font-size: 10pt;
+        text-transform: uppercase;
+        margin-top: 5px;
+        color:rgb(255, 98, 0);
+      }
+
+      .kecilan h6 {
+        font-size: 10pt;
+        text-transform: uppercase;
+        margin-top: 5px;
+        color:rgb(255, 98, 0);
+      }
+
+      div.newest h1 {
+        color: white;
+        font-size: 20pt;
+        font-weight: medium;
+      }
+      div.more h2 {
+        color: white;
+        font-size: 20pt;
+        font-weight: medium;
+        text-align: center;
+      }
+      div.newest {
+        width: 100%;
+       
+  
+      }
+      div.more {
+        width: auto;
+        margin-top:30%;
+      }
+
+      nav.filtering {
+    width: 50%;
+    
+   }
+    div.kategori{
+      position: relative;
+      width: 80vw;
+      
+    }
+
+    nav.filtering .kategori .genre {
+      position: relative;
+      width: 22%;
+      height: 15px;
+      padding: 15px;
+      font-weight: lighter;
+      float: left;
+      color: rgb(255, 255, 255);       
+      cursor: pointer;
+      background-color: black;
+      transition: background-color 0.5s;
+      font-family: Arial, Helvetica, sans-serif; 
+      text-align: center;
+      margin-bottom: 5pt;
+      text-align: center;
+    }
+  
+   
+    nav.filtering .kategori .genre:hover {
+      background-color: rgb(0, 0, 0);
+      color:rgb(229, 82, 2);
+      height: 15px;
+      font-weight: medium;
+      text-decoration: underline;
+    }
+
+    div.isipol {
+      width: 100%;
+  
+      position: relative;
+      
+    }       
+
+
+    div.genres {
+      width: 100%;
+      
+      position: relative;
+      
+    }       
+
+    a {
+      color: white;
+    }
+
+
+    div.judulann a{ 
+      font-family: Impact, 'Arial Narrow Bold', sans-serif;
+      font-stretch: semi-expanded;
+      background-color:rgba(0, 0, 0, 0.7);
+      background-blend-mode: multiply;
+    
+    }
+
+    div.category a { 
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    div.gambarnya {
+  width: 55%;
+ top: 35pt;
+ position: relative;
+}
+.imgs {
+        width: 55%;
+        float: left;
+        position:relative;
+        background-color: black;
+      }
+
+    
+
+
+      div.judulann h7 {
+        color: white;
+        font-family: Impact, 'Arial Narrow Bold', sans-serif;
+        font-size: 35pt;
+        font-weight: light;
+        text-align: left ;
+        top: 280pt ;
+        left: 0%;
+        background-attachment: fixed;
+        background-color: transparent;
+        position:relative;
+        z-index: 1;
+        width: 30%;
+       
+      }
+
+      div.logo {
+        margin-top: 0pt;
+  width: fit-content;
+  position: relative;
+  left: 48%;
+  background-color: transparent;
+  top: 0pt;
+}
+
+.judulheadline {
+        width: 80%;
+        position:relative;
+        margin-top: 37%;
+      }
+
+    </style>
+    
+    <body>
+        <nav>
+            <div class="menubar">
+                   <div class="kotakan">
+                   <div class="menu" onclick="location.href='index.html'" style="color: rgb(229, 82, 2);">HOME</div>
+                   <div class="menu" onclick="location.href='writer.html'">WRITER</div>
+                   <div class="menu" onclick="location.href='editor.html'">EDITOR'S PICKS</div>
+                   <div class="menu" onclick="location.href='about us.html'">OUR VISION</div>
+                 </div>
+                 </div>
+               </nav>
+
+            
+               
+               <div class="gambarnya">
+                <ul id="imgresults"></div></div></div>
+                  <div class="judulann">
+                    <div id="heads"></div>
+              
+                    <div class="judulheadline">
+                      <img src="assets/img/logo.png" style="width: 22%; position:relative ;left: 50%;margin-top: 8pt;" onclick="location.href='index.html'"></div>
+                  
+           
+               <div class="newest">
+                <h1> &emsp;LATEST UPDATE</h1>
+               <div id="hasilberita"></div></div></div>
+
+              
+               <div class="more">
+                <h2>MORE ON THE DAILY</h2>
+              
+                   <div class="isipol">
+                   <div id="politik"></div></div>
+            
+                  
+    </body>
+
+    <script>
+
+var qs = window.location.search;
+  var ur = new URLSearchParams(qs);
+  var id = ur.get('id');
+
+  // ini preventif bila get url tidak diisi selalu buat skudicari = 1 (supaya page tidak blank)
+  if (!id) {
+    id = 0;
+  }
+
+ 
+
+  var teks = '';
+    teks = teks + '<div class="judulann"><h7><a href="latest.html?id='  + categories.Products[id].id + '">' + categories.Products[id].headline + '</a></h7>';
+  
+  document.getElementById('heads').innerHTML = teks;
+
+
+  var baru = '';
+  for (var r=0; r <5; r++) {
+    baru = baru + '<div class="category"><img src="assets/img/' + categories.Products[r].foto + '" /><h4><a href="latest.html?id='  + categories.Products[r].id + '">' + categories.Products[r].headline + '</a></h4><h6>' + categories.Products[r].author + '</h6><h5>' +categories.Products[r].tanggal + '</h5></div>';
+  }
+  document.getElementById('hasilberita').innerHTML = baru;
+
+  var poli = '';
+  for (var r=0; r < categories.Products.length; r++) {
+    poli = poli + '<div class="kecilan"><img src="assets/img/' + categories.Products[r].foto + '" /><h4><a href="beritapolos.html?id=' + categories.Products[r].id + '">' + categories.Products[r].headline + '</a></h4><h6>' + categories.Products[r].author + '</h6><h5>' +categories.Products[r].tanggal + '</h5></div>';
+  }
+  document.getElementById('politik').innerHTML = poli;
+
+  var img = '';
+        img = img + '<div class="imgs"><a href="latest.html?id='  + categories.Products[id].id + '"><img src="assets/img/'  + categories.Products[id].foto + '" /><h5>' + categories.Products[id].teksfoto + '</a></h5></div>';
+      document.getElementById('imgresults').innerHTML = img;
+    </script>
+    </script>
